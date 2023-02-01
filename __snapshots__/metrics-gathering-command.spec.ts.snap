@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`metrics-gathering run() should write the number of multiple contributors to a new README file if it doesn't exist 1`] = `
+"# metrics-gathering
+
+A command to calculate the number of multiple contributors from a local repository that contains projects inside a \`packages\` folder, ideal for monorepos with this structure. 
+
+## Installation
+
+Install dependencies via \`yarn\`:
+
+\`\`\`sh
+❯ yarn
+\`\`\`
+
+or via \`npm\`:
+
+\`\`\`sh
+❯ npm install
+\`\`\`
+
+## Usage
+
+The command can be run via \`index.ts\`:
+
+\`\`\`sh
+❯ ts-node ./index.ts --repositoryPath <absolute or relative path to a git repository>
+\`\`\`
+
+Additionally if you want to check a repository folder other than \`packages\`:
+
+\`\`\`sh
+❯ ts-node ./index.ts --repositoryPath <absolute or relative path to a git repository> --targetDirectory <packages is the default>
+\`\`\`
+
+__NOTE__: The main function is called \`run\` on \`metrics-gathering-command.ts\`.
+
+## Tests
+
+\`\`\`sh
+❯ yarn test
+\`\`\`
+
+## License
+
+MIT
+
+## Latest result evaluating repository at "../count-contributors-sample": 2
+"
+`;
+
+exports[`metrics-gathering run() should write the number of multiple contributors to an existing README file with a result section by updating it 1`] = `
+"
+
+## Latest result evaluating repository at "foobar": foobiz
+"
+`;
+
+exports[`metrics-gathering run() should write the number of multiple contributors to an existing README file with a result section by updating it 2`] = `
+"
+
+## Latest result evaluating repository at "../count-contributors-sample": 2
+"
+`;
+
+exports[`metrics-gathering run() should write the number of multiple contributors to an existing README file with no result section by appending it 1`] = `"foobar"`;
+
+exports[`metrics-gathering run() should write the number of multiple contributors to an existing README file with no result section by appending it 2`] = `
+"foobar
+
+## Latest result evaluating repository at "../count-contributors-sample": 2
+"
+`;
